@@ -1,0 +1,15 @@
+.headerItem {
+  min-width: 80%;
+  width: auto;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.57);
+  cursor: pointer;
+  transition: all .3s;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.headerItem:hover {
+  background-color: rgba(34, 34, 34, 0.118);
+}

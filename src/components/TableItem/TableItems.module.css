@@ -1,0 +1,7 @@
+.tableItem {
+  padding: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.105);
+}
