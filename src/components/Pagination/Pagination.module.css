@@ -4,12 +4,12 @@
   min-height: 40px;
   height: fit-content;
   padding-top: 10px;
+  margin: 20px auto auto;
   display: flex;
   flex-direction: row;
-  border-top: 1px solid #858585;
 }
 
-.pagination__list {
+.list {
   list-style-type: none;
   width: fit-content;
   height: 100%;
@@ -21,46 +21,45 @@
   justify-content: space-between;
 }
 
-.pagination__button {
+.button {
   width: 40px;
   height: 40px;
   margin: auto 5px;
   padding: 0;
   border: 1px solid #858585;
   background-color: transparent;
-  border-radius: 50%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-weight: 300;
-  font-style: bold;
-  font-size: 16px;
-  line-height: 18px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
   color: black;
   text-align: center;
   cursor: pointer;
   transition: all .3s;
   text-align: center;
 }
-.pagination__button_active {
-  background-color: rgba(1, 155, 122, 0.459);
+
+.buttonActive {
+  background-color: #e5eeff;
 }
 
-.pagination__button:hover {
-  background-color: rgba(221, 221, 221, 0.425);
+.button:hover {
+  background-color: #3766bd7a;
 }
 
-.pagination__button_type_nav {
+.buttonNav {
   width: 50px;
   height: 50px;
   margin-bottom: 0;
-  background-color: rgba(1, 155, 122, 0.171);
+  background-color: #e5eeff;
+  font-size: 16px;
 }
 
-.pagination__button_type_nav:hover {
-  background-color: rgba(1, 155, 122, 0.459);
+.buttonNav:hover {
+  background-color: #3766bd7a;
 }
 
 @media screen and (max-width: 1315px) {
-  .pagination__button {
+  .button {
     width: 30px;
     height: 30px;
     font-size: 14px;
@@ -69,7 +68,7 @@
     margin-right: 3px;
   }
 
-  .pagination__button_type_nav {
+  .buttonNav {
     width: 40px;
     height: 40px;
     font-size: 11px;

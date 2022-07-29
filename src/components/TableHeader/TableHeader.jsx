@@ -26,6 +26,7 @@ const TableHeader = (props) => {
       // pagination()
       setSortingOrder('up');
     }
+    props.setPage(1);
   }
 
   return (

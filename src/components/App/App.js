@@ -16,12 +16,6 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <Slider
-        min={1}
-        max={100}
-        defaultValue={10}
-        title={'Positions per page'}
-      />
       {
         allData &&
         <TableMain
@@ -29,7 +23,6 @@ function App() {
           setAllData={setAllData}
         />
       }
-
     </div>
   );
 }

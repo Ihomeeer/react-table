@@ -1,4 +1,6 @@
 // компонент с пагинацией
+import styles from './Pagination.module.css';
+import cx from 'classnames';
 import { v4 as generateUid } from 'uuid';
 
 export const Pagination = ({ itemsPerPage, totalItems, currentPage, setPage }) => {
@@ -29,14 +31,14 @@ export const Pagination = ({ itemsPerPage, totalItems, currentPage, setPage }) =
   }
 
   return (
-    <div className="pagination">
-      <button className="pagination__button pagination__button_type_nav" onClick={prevPageHandler}>PREV</button>
-      <ul className="pagination__list">
+    <div className={styles.pagination}>
+      <button className={cx(styles.button, styles.buttonNav)} onClick={prevPageHandler}>PREV</button>
+      <ul className={styles.list}>
         {
           pageButtons.map((number) => {
             return (
-              <li className="pagination__item" key={generateUid()}>
-                <button className={`pagination__button ${number === currentPage ? 'pagination__button_active' : ''}`} onClick={() => changePageNumber(number)}>
+              <li className={styles.item} key={generateUid()}>
+                <button  className={cx(styles.button, number === currentPage ? styles.buttonActive : '')} onClick={() => changePageNumber(number)}>
                   {number}
                 </button>
               </li>
@@ -44,7 +46,7 @@ export const Pagination = ({ itemsPerPage, totalItems, currentPage, setPage }) =
           })
         }
       </ul>
-      <button className="pagination__button pagination__button_type_nav" onClick={nextPageHandler}>NEXT</button>
+      <button className={cx(styles.button, styles.buttonNav)} onClick={nextPageHandler}>NEXT</button>
     </div>
   )
 }

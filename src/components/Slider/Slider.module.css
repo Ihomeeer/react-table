@@ -1,6 +1,7 @@
 .sliderElement {
   width: 30%;
   height: auto;
+  margin-top: 20px;
 }
 
 .sliderContainer {
@@ -15,7 +16,6 @@
   width: 100%;
   height: fit-content;
   margin: 10px auto 5px;
-  color: #007cf8fd;
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
@@ -35,9 +35,9 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #007cf8fd;
+  background: #3766bd;
   border: none;
-  box-shadow: 0 0 2px black;
+  box-shadow: 0 0 1px black;
   margin-top: -13px;
   cursor: pointer;
 }
@@ -48,7 +48,7 @@
 
 .slider::-webkit-slider-runnable-track {
   height: 1em;
-  border: 1px solid #007cf850;
+  border: 1px solid #3766bd;
   border-radius: 0.5em;
   background: #007cf810;
   box-shadow: none;
@@ -59,7 +59,6 @@
   padding: 0;
   width: 40px;
   height: 40px;
-  color: #007cf8fd;
   font-weight: 700;
   font-size: 40px;
   line-height: 40px;
