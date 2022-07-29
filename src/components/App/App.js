@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './App.module.css';
 import TableMain from '../TableMain/TableMain';
-import Slider from '../Slider/Slider';
 import api from '../../utils/api';
 
 function App() {
@@ -16,13 +15,13 @@ function App() {
 
   return (
     <div className={styles.App}>
-      {
-        allData &&
-        <TableMain
-          data={allData}
-          setAllData={setAllData}
-        />
-      }
+        {
+          allData &&
+          <TableMain
+            data={allData}
+            setAllData={setAllData}
+          />
+        }
     </div>
   );
 }

@@ -9,12 +9,11 @@ const TableMain = (props) => {
   // активная страница
   const [currentPage, setCurrentPage] = useState(1);
   // количество элементов на странице
-  const [itemsPerPage] = useState(9);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
 
   const lastItemIndex = currentPage * itemsPerPage;
   const firsItemIndex = lastItemIndex - itemsPerPage;
   const currentItemsList = props.data && props.data?.slice(firsItemIndex, lastItemIndex)
-
 
   return (
     <>
@@ -37,10 +36,12 @@ const TableMain = (props) => {
         setPage={setCurrentPage}
       />
       <Slider
-        min={1}
+        min={10}
         max={100}
         defaultValue={10}
         title={'Positions per page'}
+        setValue={setItemsPerPage}
+        sliderValue={itemsPerPage}
       />
     </>
 
