@@ -15,14 +15,13 @@ function App() {
 
   return (
     <div className={styles.App}>
-      {
-        allData &&
-        <TableMain
-          data={allData}
-          setAllData={setAllData}
-        />
-      }
-
+        {
+          allData &&
+          <TableMain
+            data={allData}
+            setAllData={setAllData}
+          />
+        }
     </div>
   );
 }
