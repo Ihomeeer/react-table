@@ -1,0 +1,24 @@
+.tableRow {
+  transition: .1s;
+}
+
+.tableRow:hover {
+  background-color: rgba(0, 89, 255, 0.2);
+}
+
+.tableRowItem {
+  padding: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.105);
+
+}
+
+.tableRowItem:nth-child(odd) {
+  background-color: rgba(0, 89, 255, 0.1);
+}
+
+.tableRowItem:nth-child(even) {
+  background-color: rgba(0, 89, 255, 0.05);
+}

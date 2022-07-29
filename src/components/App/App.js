@@ -19,7 +19,8 @@ function App() {
       <Slider
         min={1}
         max={100}
-        title={'Позиции на странице'}
+        defaultValue={10}
+        title={'Positions per page'}
       />
       {
         allData &&
