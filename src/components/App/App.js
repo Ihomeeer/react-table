@@ -5,7 +5,6 @@ import api from '../../utils/api';
 
 function App() {
   const [allData, setAllData] = useState([]);
-  const [sortingOrder, setSortingOrder] = useState('up');
 
   useEffect(() => {
     api.getData()
@@ -14,32 +13,13 @@ function App() {
       })
   }, []);
 
-  const handleSort = (col) => {
-    if (sortingOrder === 'up') {
-      const sortedData = allData && [...allData].sort((a, b) =>
-        a[col] > b[col] ? 1 : -1
-      );
-      setAllData(sortedData);
-      // pagination()
-      setSortingOrder('down');
-    }
-    if (sortingOrder === 'down') {
-      const sortedData = allData && [...allData].sort((a, b) =>
-        a[col] < b[col] ? 1 : -1
-      );
-      setAllData(sortedData);
-      // pagination()
-      setSortingOrder('up');
-    }
-  }
-
   return (
     <div className={styles.App}>
       {
         allData &&
         <TableMain
           data={allData}
-          sort={handleSort}
+          setAllData={setAllData}
         />
       }
 

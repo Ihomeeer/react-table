@@ -1,7 +1,7 @@
 .headerItem {
   min-width: 80%;
   width: auto;
-  padding: 10px 20px;
+  padding: 0;
   border-bottom: 1px solid rgba(34, 34, 34, 0.57);
   cursor: pointer;
   transition: all .3s;
@@ -12,4 +12,27 @@
 
 .headerItem:hover {
   background-color: rgba(34, 34, 34, 0.118);
+}
+
+.headerItem:nth-child(odd) {
+  background-color: rgba(0, 89, 255, 0.1);
+}
+
+.headerItem:nth-child(even) {
+  background-color: rgba(0, 89, 255, 0.05);
+}
+
+
+.titleContainer {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin: auto 0 auto 10px;
 }

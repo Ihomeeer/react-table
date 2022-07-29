@@ -4,4 +4,17 @@
   font-size: 18px;
   line-height: 20px;
   border-bottom: 1px solid rgba(34, 34, 34, 0.105);
+  transition: .1s;
+}
+
+.tableItem:nth-child(odd) {
+  background-color: rgba(0, 89, 255, 0.1);
+}
+
+.tableItem:nth-child(even) {
+  background-color: rgba(0, 89, 255, 0.05);
+}
+
+.tableItem:hover {
+  background-color: rgba(0, 89, 255, 0.2);
 }

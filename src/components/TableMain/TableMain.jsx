@@ -6,9 +6,10 @@ import TableItems from '../TableItem/TableItems';
 const TableMain = (props) => {
   return (
     <table className={styles.table}>
-        <TableHeader 
-        sort={props.sort}
-        />
+      <TableHeader
+        setAllData={props.setAllData}
+        allData={props.data}
+      />
       <tbody>
         <TableItems
           data={props.data}
