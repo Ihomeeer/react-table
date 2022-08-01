@@ -1,3 +1,22 @@
+.section {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: space-around;
+}
+
+.tableContainer {
+  margin: auto 20px;
+}
+
+.slidersContainer {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .table {
-  width: 80%;
+  width: 100%;
 }
