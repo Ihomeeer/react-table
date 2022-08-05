@@ -5,6 +5,7 @@ import api from '../../utils/api';
 
 function App() {
   const [allData, setAllData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     api.getData()
@@ -14,16 +15,13 @@ function App() {
   }, []);
 
   const handleSubmit = (min, max) => {
-    console.log('app submit')
     const newData = handleSort(allData, min, max)
-    newData && console.log(newData)
-    setAllData(newData);
+    setFilteredData(newData);
   }
 
     // Сортировка по данным инпутов
     function handleSort(array, min, max) {
-      let modArray = []
-      console.log(arguments)
+      let modArray = [];
       array.forEach((item) => {
         if (item.price > min && item.price < max) {
           modArray.push(item)
@@ -39,6 +37,7 @@ function App() {
           allData &&
           <TableMain
             data={allData}
+            filteredData={filteredData}
             setAllData={setAllData}
             submit={handleSubmit}
           />

@@ -14,8 +14,8 @@ const TableMain = (props) => {
 
   const lastItemIndex = currentPage * itemsPerPage;
   const firsItemIndex = lastItemIndex - itemsPerPage;
-  // const sortedItems =  props.data && handleSort(props.data, minPriceSliderVal, maxPriceSliderVal)
-  let currentItemsList = props.data && props.data?.slice(firsItemIndex, lastItemIndex);
+  // если есть массив с фильтрованными данными, то на вход подается именно он
+  let currentItemsList = props.filteredData.length > 0 ? props.filteredData && props.filteredData?.slice(firsItemIndex, lastItemIndex) : props.data && props.data?.slice(firsItemIndex, lastItemIndex);
 
   return (
     <div className={styles.section}>
@@ -34,7 +34,7 @@ const TableMain = (props) => {
         </table>
         <Pagination
           itemsPerPage={itemsPerPage}
-          totalItems={props.data && props.data.length}
+          totalItems={props.filteredData.length > 0 ? props.filteredData && props.filteredData.length : props.data && props.data.length}
           currentPage={currentPage}
           setPage={setCurrentPage}
         />
