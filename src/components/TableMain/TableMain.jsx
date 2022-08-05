@@ -50,6 +50,7 @@ const TableMain = (props) => {
         />
         <FilterForm
           data={props.data}
+          submit={props.submit}
         />
       </div>
 

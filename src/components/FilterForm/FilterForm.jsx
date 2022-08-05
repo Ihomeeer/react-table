@@ -24,11 +24,16 @@ const FilterForm = (props) => {
     return { max: maxPrice, min: minPrice }
   }
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    props.submit(+minPriceSliderVal, maxPriceSliderVal);
+  }
+
   return (
     <>
       {
         pricesRange.max !== 0 && pricesRange.min !== 0 &&
-        <form className={styles.slidersForm} onSubmit={props.submit}>
+        <form className={styles.slidersForm} onSubmit={(e) => handleFormSubmit(e)}>
           <h2 className={styles.formTitle}>
             Price range
           </h2>

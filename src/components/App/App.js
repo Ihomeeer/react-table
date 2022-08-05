@@ -13,17 +13,21 @@ function App() {
       })
   }, []);
 
-  const handleSubmit = (e, min, max) => {
-    e.preventDefault();
-    setAllData(handleSort(allData, min, max));
+  const handleSubmit = (min, max) => {
+    console.log('app submit')
+    const newData = handleSort(allData, min, max)
+    newData && console.log(newData)
+    setAllData(newData);
   }
 
     // Сортировка по данным инпутов
     function handleSort(array, min, max) {
       let modArray = []
+      console.log(arguments)
       array.forEach((item) => {
         if (item.price > min && item.price < max) {
           modArray.push(item)
+
         }
       })
       return modArray;
