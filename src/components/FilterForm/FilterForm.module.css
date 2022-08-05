@@ -1,0 +1,30 @@
+.slidersForm {
+  width: 100%;
+  margin: auto;
+  padding: 0;
+}
+
+.formTitle {
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 89, 255, 0.2);
+  transition: all .3s;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.submitButton {
+  width: 20%;
+  height: 30px;
+  margin-top: 20px;
+  color: black;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 26px;
+  outline: none;
+  transition: all .3s;
+}

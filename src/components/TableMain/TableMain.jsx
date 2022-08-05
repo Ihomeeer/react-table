@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styles from './TableMain.module.css';
 import TableHeader from '../TableHeader/TableHeader';
-import TableItems from '../TableItem/TableItems';
-import { Pagination } from '../Pagination/Pagination';
+import TableItems from '../TableItems/TableItems';
+import FilterForm from '../FilterForm/FilterForm';
+import Pagination from '../Pagination/Pagination';
 import Slider from '../Slider/Slider';
 
 const TableMain = (props) => {
@@ -13,37 +14,47 @@ const TableMain = (props) => {
 
   const lastItemIndex = currentPage * itemsPerPage;
   const firsItemIndex = lastItemIndex - itemsPerPage;
-  const currentItemsList = props.data && props.data?.slice(firsItemIndex, lastItemIndex)
+  // если есть массив с фильтрованными данными, то на вход подается именно он
+  let currentItemsList = props.filteredData.length > 0 ? props.filteredData && props.filteredData?.slice(firsItemIndex, lastItemIndex) : props.data && props.data?.slice(firsItemIndex, lastItemIndex);
 
   return (
-    <>
-      <table className={styles.table}>
-        <TableHeader
-          setPage={setCurrentPage}
-          setAllData={props.setAllData}
-          allData={props.data}
-        />
-        <tbody>
-          <TableItems
-            data={currentItemsList}
+    <div className={styles.section}>
+      <div className={styles.tableContainer}>
+        <table className={styles.table}>
+          <TableHeader
+            setPage={setCurrentPage}
+            setAllData={props.filteredData.length > 0 ? props.filteredData && props.setFilteredData : props.data && props.setAllData}
+            allData={props.filteredData.length > 0 ? props.filteredData && props.filteredData : props.data && props.data}
           />
-        </tbody>
-      </table>
-      <Pagination
-        itemsPerPage={itemsPerPage}
-        totalItems={props.data && props.data.length}
-        currentPage={currentPage}
-        setPage={setCurrentPage}
-      />
-      <Slider
-        min={10}
-        max={100}
-        defaultValue={10}
-        title={'Positions per page'}
-        setValue={setItemsPerPage}
-        sliderValue={itemsPerPage}
-      />
-    </>
+          <tbody>
+            <TableItems
+              data={currentItemsList && currentItemsList}
+            />
+          </tbody>
+        </table>
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={props.filteredData.length > 0 ? props.filteredData && props.filteredData.length : props.data && props.data.length}
+          currentPage={currentPage}
+          setPage={setCurrentPage}
+        />
+      </div>
+      <div className={styles.slidersContainer}>
+        <Slider
+          min={10}
+          max={100}
+          defaultValue={10}
+          title={'Positions per page'}
+          setValue={setItemsPerPage}
+          sliderValue={itemsPerPage}
+        />
+        <FilterForm
+          data={props.data}
+          submit={props.submit}
+        />
+      </div>
+
+    </div>
 
   )
 }

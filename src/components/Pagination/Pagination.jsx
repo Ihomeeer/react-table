@@ -1,10 +1,15 @@
 // компонент с пагинацией
+import {useEffect} from 'react';
 import styles from './Pagination.module.css';
 import cx from 'classnames';
 import { v4 as generateUid } from 'uuid';
 
-export const Pagination = ({ itemsPerPage, totalItems, currentPage, setPage }) => {
+const Pagination = ({ itemsPerPage, totalItems, currentPage, setPage }) => {
   const pageButtons = [];
+
+  useEffect(() => {
+    setPage(1)
+  }, [itemsPerPage])
 
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
     pageButtons.push(i)
@@ -31,22 +36,29 @@ export const Pagination = ({ itemsPerPage, totalItems, currentPage, setPage }) =
   }
 
   return (
-    <div className={styles.pagination}>
-      <button className={cx(styles.button, styles.buttonNav)} onClick={prevPageHandler}>PREV</button>
-      <ul className={styles.list}>
-        {
-          pageButtons.map((number) => {
-            return (
-              <li className={styles.item} key={generateUid()}>
-                <button  className={cx(styles.button, number === currentPage ? styles.buttonActive : '')} onClick={() => changePageNumber(number)}>
-                  {number}
-                </button>
-              </li>
-            )
-          })
-        }
-      </ul>
-      <button className={cx(styles.button, styles.buttonNav)} onClick={nextPageHandler}>NEXT</button>
-    </div>
+    <>
+      {
+        pageButtons.length > 1 &&
+        <div className={styles.pagination}>
+          <button className={cx(styles.button, styles.buttonNav)} onClick={prevPageHandler}></button>
+          <ul className={styles.list}>
+            {
+              pageButtons.map((number) => {
+                return (
+                  <li className={styles.item} key={generateUid()}>
+                    <button className={cx(styles.button, number === currentPage ? styles.buttonActive : '')} onClick={() => changePageNumber(number)}>
+                      {number}
+                    </button>
+                  </li>
+                )
+              })
+            }
+          </ul>
+          <button className={cx(styles.button, styles.buttonNav)} onClick={nextPageHandler}></button>
+        </div>
+      }
+    </>
   )
 }
+
+export default Pagination;
