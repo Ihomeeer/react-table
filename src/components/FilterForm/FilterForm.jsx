@@ -1,5 +1,5 @@
+import React, { useState, useEffect } from 'react';
 import styles from './FilterForm.module.css';
-import React, { useState } from 'react';
 import Slider from '../Slider/Slider';
 
 const FilterForm = (props) => {
@@ -15,6 +15,14 @@ const FilterForm = (props) => {
     setMinPriceSliderVal(min);
     setPricesRange({ max: max, min: min })
   }, [props.data]);
+
+  // Минимальная и максимальная цена
+  const handleSetPrice = (array) => {
+    const pricesArray = props.data && array.map((item) => item.price);
+    const maxPrice = pricesArray && Math.max(...pricesArray);
+    const minPrice = pricesArray && Math.min(...pricesArray);
+    return { max: maxPrice, min: minPrice }
+  }
 
   return (
     <>

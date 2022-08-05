@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './TableMain.module.css';
 import TableHeader from '../TableHeader/TableHeader';
 import TableItems from '../TableItems/TableItems';
-import { Pagination } from '../Pagination/Pagination';
+import FilterForm from '../FilterForm/FilterForm';
+import Pagination from '../Pagination/Pagination';
 import Slider from '../Slider/Slider';
 
 const TableMain = (props) => {
@@ -11,29 +12,10 @@ const TableMain = (props) => {
   // количество элементов на странице
   const [itemsPerPage, setItemsPerPage] = useState(10);
 
-
   const lastItemIndex = currentPage * itemsPerPage;
   const firsItemIndex = lastItemIndex - itemsPerPage;
   // const sortedItems =  props.data && handleSort(props.data, minPriceSliderVal, maxPriceSliderVal)
   let currentItemsList = props.data && props.data?.slice(firsItemIndex, lastItemIndex);
-
-  useEffect(() => {
-    const max = handleSetPrice(props.data).max;
-    const min = handleSetPrice(props.data).min;
-    setMaxPriceSliderVal(max);
-    setMinPriceSliderVal(min);
-    setPricesRange({ max: max, min: min })
-  }, [props.data]);
-
-
-
-  // Минимальная и максимальная цена
-  const handleSetPrice = (array) => {
-    const pricesArray = props.data && array.map((item) => item.price);
-    const maxPrice = pricesArray && Math.max(...pricesArray);
-    const minPrice = pricesArray && Math.min(...pricesArray);
-    return { max: maxPrice, min: minPrice }
-  }
 
   return (
     <div className={styles.section}>
@@ -66,7 +48,9 @@ const TableMain = (props) => {
           setValue={setItemsPerPage}
           sliderValue={itemsPerPage}
         />
-
+        <FilterForm
+          data={props.data}
+        />
       </div>
 
     </div>

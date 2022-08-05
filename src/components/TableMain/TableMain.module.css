@@ -17,39 +17,6 @@
   align-items: center;
 }
 
-.slidersForm {
-  width: 100%;
-  margin: auto;
-  padding: 0;
-}
-
-.formTitle {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 89, 255, 0.2);
-  transition: all .3s;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 22px;
-}
-
-.submitButton {
-  width: 20%;
-  height: 30px;
-  margin-top: 20px;
-  background: transparent;
-  border: 1px solid #3766bd;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 22px;
-  outline: none;
-  transition: all .3s;
-}
-
-.submitButton:hover {
-  background-color: #3766bd7a;
-}
-
 .table {
   width: 100%;
 }
