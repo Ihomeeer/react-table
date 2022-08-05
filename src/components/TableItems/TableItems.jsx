@@ -12,6 +12,7 @@ const TableItems = (props) => {
             <TableRow
               key={item.id}
               item={item}
+              openModal={props.openModal}
             />
           )
         })

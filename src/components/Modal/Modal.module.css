@@ -1,0 +1,88 @@
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.678);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardGeneral {
+  width: 50%;
+  height: fit-content;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #858585;
+  border-radius: 5px;
+  background: #f2f6ffe8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardHeader {
+  font-weight: 700;
+  font-style: bold;
+  margin: 20px;
+  font-size: 36px;
+  line-height: 36px;
+  color: black;
+  text-align: center;
+}
+
+.cardImage {
+  width: auto;
+  max-width: 90%;
+  height: auto;
+  max-height: 40%;
+}
+
+.cardArticle {
+  width: 90%;
+  height: auto;
+  padding: 0;
+}
+
+.cardText {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: left;
+}
+
+.cardButton {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin: 10px 10px auto auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 40px;
+  line-height: 40px;
+  color: rgba(3, 40, 109, 0.897);
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.cardCopyButton {
+  width: 180px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}

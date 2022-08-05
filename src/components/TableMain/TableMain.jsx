@@ -29,6 +29,7 @@ const TableMain = (props) => {
           <tbody>
             <TableItems
               data={currentItemsList && currentItemsList}
+              openModal={props.openModal}
             />
           </tbody>
         </table>

@@ -3,23 +3,13 @@ import styles from './TableRow.module.css';
 
 const TableRow = (props) => {
 
-  const handleCopyData = () => {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(`Title: ${props.item.title}, price: $${props.item.price}, discount: ${props.item.discountPercentage}%`)
-        .then(() => {
-          console.log('data copied');
-        })
-        .catch(err => {
-          console.log('Something went wrong', err);
-        });
-    } else {
-      return
-    }
+  const handleOpenModal = (data) => {
+    props.item && props.openModal(data);
   }
 
   return (
     <>
-      <tr key={props.item.id} className={styles.tableRow} onClick={handleCopyData}>
+      <tr key={props.item.id} className={styles.tableRow} onClick={() => {handleOpenModal(props.item)} }>
 
         <td className={styles.tableRowItem}>
           {props.item.title}
