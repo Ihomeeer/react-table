@@ -39,6 +39,7 @@ function App() {
             data={allData}
             filteredData={filteredData}
             setAllData={setAllData}
+            setFilteredData={setFilteredData}
             submit={handleSubmit}
           />
         }

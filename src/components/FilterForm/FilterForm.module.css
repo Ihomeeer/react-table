@@ -17,16 +17,14 @@
   width: 20%;
   height: 30px;
   margin-top: 20px;
+  color: black;
   background: transparent;
-  border: 1px solid #3766bd;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 22px;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 26px;
   outline: none;
   transition: all .3s;
-}
-
-.submitButton:hover {
-  background-color: #3766bd7a;
 }

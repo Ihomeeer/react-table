@@ -23,8 +23,8 @@ const TableMain = (props) => {
         <table className={styles.table}>
           <TableHeader
             setPage={setCurrentPage}
-            setAllData={props.setAllData}
-            allData={props.data}
+            setAllData={props.filteredData.length > 0 ? props.filteredData && props.setFilteredData : props.data && props.setAllData}
+            allData={props.filteredData.length > 0 ? props.filteredData && props.filteredData : props.data && props.data}
           />
           <tbody>
             <TableItems

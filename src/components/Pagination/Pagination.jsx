@@ -40,7 +40,7 @@ const Pagination = ({ itemsPerPage, totalItems, currentPage, setPage }) => {
       {
         pageButtons.length > 1 &&
         <div className={styles.pagination}>
-          <button className={cx(styles.button, styles.buttonNav)} onClick={prevPageHandler}>PREV</button>
+          <button className={cx(styles.button, styles.buttonNav)} onClick={prevPageHandler}></button>
           <ul className={styles.list}>
             {
               pageButtons.map((number) => {
@@ -54,7 +54,7 @@ const Pagination = ({ itemsPerPage, totalItems, currentPage, setPage }) => {
               })
             }
           </ul>
-          <button className={cx(styles.button, styles.buttonNav)} onClick={nextPageHandler}>NEXT</button>
+          <button className={cx(styles.button, styles.buttonNav)} onClick={nextPageHandler}></button>
         </div>
       }
     </>
