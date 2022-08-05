@@ -13,6 +13,22 @@ function App() {
       })
   }, []);
 
+  const handleSubmit = (e, min, max) => {
+    e.preventDefault();
+    setAllData(handleSort(allData, min, max));
+  }
+
+    // Сортировка по данным инпутов
+    function handleSort(array, min, max) {
+      let modArray = []
+      array.forEach((item) => {
+        if (item.price > min && item.price < max) {
+          modArray.push(item)
+        }
+      })
+      return modArray;
+    }
+
   return (
     <div className={styles.App}>
         {
@@ -20,6 +36,7 @@ function App() {
           <TableMain
             data={allData}
             setAllData={setAllData}
+            submit={handleSubmit}
           />
         }
     </div>
